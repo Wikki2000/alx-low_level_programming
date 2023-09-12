@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/** 
+/**
  * main - Entry point of the program
  *
  * This program prints all possible combination of single number
@@ -10,5 +10,21 @@
  */
 int main(void)
 {
-	int i;
+	int i = 0;
 
+	while (i <= 9)
+	{
+		putchar(i + '0');
+		if (i <= 8)
+		{
+			putchar(',');
+			putchar(32);
+		}
+
+		i++;
+	}
+
+	putchar(10);
+
+	return (0);
+}
