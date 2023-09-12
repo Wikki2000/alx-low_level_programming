@@ -10,7 +10,7 @@
 int main(void)
 {
 	int i;
-	char message[] = "Hello\n";
+	char message[] = "_putchar";
 
 	for (i = 0; message[i] != '\0'; i++)
 	{
