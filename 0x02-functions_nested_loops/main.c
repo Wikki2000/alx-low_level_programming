@@ -15,3 +15,32 @@ int _putchar(char c)
 {
 	return (fwrite(&c, SIZE, COUNT, stdout));
 }
+
+void print_alphabet(void)
+{
+	char alpha = 'a';
+
+	while (alpha <= 'z')
+	{
+		_putchar(alpha);
+		alpha++;
+	}
+
+}
+
+void print_alphabet_x10(void)
+{
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		char alpha = 'a';
+		while (alpha <= 'z')
+		{
+			_putchar(alpha);
+			alpha++;
+		}
+
+		_putchar('\n');
+	}
+}
