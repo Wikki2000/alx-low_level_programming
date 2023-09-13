@@ -11,5 +11,7 @@
 int main(void)
 {
 	2-print_alphabet_x10();
+
+	_putchar(10);
 	return (0);
 }
