@@ -1,15 +1,17 @@
 #include "main.h"
 
 /**
- * main - Entry of the program
- *
- * This program call a function to print the 27 alphabet.
- *
- * Return: Always 0 (success)
+ * void print_alphabet(void) - Print alphabet in lower case
  */
-int main(void)
-{
-	print_alphabet();
 
-	return (0);
+void print_alphabet(void)
+{
+	char alpha = 'a';
+
+	for (; alpha <= 'z'; alpha++)
+	{
+		_putchar(alpha);
+	}
+
+	_putchar(10);
 }
