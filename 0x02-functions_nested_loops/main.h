@@ -22,5 +22,5 @@ int _abs(int);
 int print_last_digit(int);
 int add(int num1, int num2);
 void jack_bauer(void);
-
+void times_table(void);
 #endif
