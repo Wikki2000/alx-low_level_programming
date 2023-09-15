@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_numbers - Print natural numbers from 0-9
+ * more_numbers - Print numbers 0-14 repeatedly
  */
 void more_numbers(void)
 {
@@ -10,7 +10,6 @@ void more_numbers(void)
 	while (count < 11)
 	{
 		int num = 0;
-
 		while (num < 15)
 		{
 			_putchar(num + '0');
