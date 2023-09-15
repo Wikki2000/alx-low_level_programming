@@ -7,7 +7,7 @@
 void print_line(int n)
 {
 	if (n <= 0)
-		_putchar(10);
+		_putchar('\n');
 	else
 	{
 		int i; /* i count the the nos 0f line(_) to be drawn */
@@ -16,5 +16,5 @@ void print_line(int n)
 			_putchar('_');
 	}
 
-	_putchar(10);
+	_putchar('\n');
 }
