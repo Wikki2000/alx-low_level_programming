@@ -12,7 +12,7 @@ void print_line(int n)
 	{
 		int i; /* i count the the nos 0f line(_) to be drawn */
 
-		for (i = 0; i <= n; i++)
+		for (i = 1; i <= n; i++)
 			_putchar('_');
 	}
 
