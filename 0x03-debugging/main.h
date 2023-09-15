@@ -4,6 +4,12 @@
 #include <stdio.h>
 
 /**
+ * positive_or_negative - Print sign of a number
+ * @i: The number to be check
+ */
+void positive_or_negative(int i);
+
+/**
  * largest_number - Find the largest number among three integers.
  * @a: The first integer
  * @b: The second integer
