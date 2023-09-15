@@ -10,6 +10,7 @@ void more_numbers(void)
 	while (count < 11)
 	{
 		int num = 0;
+
 		while (num < 15)
 		{
 			_putchar(num + '0');
