@@ -1,16 +1,34 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - Print any number upto 98
- * @n: The starting point of the number
+ * print_to_98 - Print number from n to 98
+ * @n: The number to be printed to n
  */
 void print_to_98(int n)
 {
-	for (n = 0; n <= 98; n++)
-		printf("%d, ", n);
-
-	for (n = 0; n >= 98; n--)
-		printf("%d, ", n);
-
-	printf("\n");
+	if (n <= 98)
+	{
+		while (n <= 98)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}
+			n++;
+		}
+	}
+	else
+	{
+		while (n >= 98)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}
+			n--;
+		}
+	}
+	putchar('\n');
 }
