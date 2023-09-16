@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_sign - Print the that prints the sign of a number
@@ -12,27 +13,21 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		_putchar('+');
-		_putchar(' ');
+		putchar('+');
 		return (1);
-		_putchar(10);
 	}
 
 	else if (n == 0)
 	{
-		_putchar('0');
-		_putchar(' ');
-		_putchar(10);
+		putchar('0');
 		return (0);
 	}
 
 	else if (n < 0)
 	{
-		_putchar('-');
-		_putchar(' ');
-		_putchar(10);
+		putchar('-');
 		return (-1);
 	}
-
+	putchar('\n');
 	return (0);
 }
