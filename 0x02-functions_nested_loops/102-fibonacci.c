@@ -19,7 +19,7 @@ int main(void)
 		nxt = a + b;
 		printf("%ld", nxt);
 
-		if(i != 50)
+		if (i != 50)
 			printf(", ");
 
 		a = b;
