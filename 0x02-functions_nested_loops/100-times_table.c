@@ -10,21 +10,24 @@ void print_times_table(int n)
 	int j;
 	int ans;
 
-	for (i = 0; i <= n; i++)
+	if (n > 0 &&  n < 15)
 	{
-		for (j = 0; j <= n; j++)
+
+		for (i = 0; i <= n; i++)
 		{
-			ans = i * j;
-			printf("%3d", ans);
-
-			if (j != n)
+			for (j = 0; j <= n; j++)
 			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+				ans = i * j;
+				printf("%3d", ans);
 
-		putchar('\n');
+				if (j != n)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+
+			putchar('\n');
+		}
 	}
-	putchar('\n');
 }
