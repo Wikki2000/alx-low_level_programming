@@ -17,7 +17,10 @@ int main(void)
 	for (i = 3; i <= 50; i++)
 	{
 		nxt = a + b;
-		printf("%ld,", nxt);
+		printf("%ld", nxt);
+
+		if(i != 50)
+			printf(", ");
 
 		a = b;
 		b = nxt;
