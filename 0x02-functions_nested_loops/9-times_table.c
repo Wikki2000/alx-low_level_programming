@@ -2,21 +2,30 @@
 #include "main.h"
 
 /**
- * times_table - Print times table
+ * times_table - Print 9 times table
  */
 void times_table(void)
 {
-	/* using i as row and j as column */
 	int i;
-	int j;
 
 	for (i = 0; i <= 9; i++)
+	{
+		int j;
+		int ans;
 
 		for (j = 0; j <= 9; j++)
 		{
-			int  result = i * j;
+			ans = i * j;
 
-			printf("%2d, ", result);
+			printf("%2d", ans);
+
+			if (j != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+
 		}
-	_putchar(10);
+		putchar('\n');
+	}
 }
