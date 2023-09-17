@@ -19,7 +19,7 @@ void times_table(void)
 
 			printf("%2d", ans);
 
-			if (j != 9 && j<= 9)
+			if (j >= 0 && j<= 8)
 			{
 				putchar(',');
 				putchar(' ');
