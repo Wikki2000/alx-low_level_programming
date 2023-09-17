@@ -10,20 +10,17 @@ int main(void)
 	unsigned long a = 1;
 	unsigned long b = 2;
 	unsigned long temp;
-	int count = 2;
+	int i = 2;
 
 	printf("%lu, %lu, ", a, b);
-	while (count < 98)
+
+	for (i = 3; i <= 98; i++)
 	{
 		temp = a + b;
 		a = b;
 		b = temp;
-		count++;
 
-		if (count < 98)
-			printf("%lu, ", temp);
-		else
-			printf("%lu\n", temp);
+		printf("%lu, ", temp);
 	}
 
 	return (0);
