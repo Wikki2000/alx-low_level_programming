@@ -18,7 +18,7 @@ void print_diagonal(int n)
 		{
 			int j; /* count the space character */
 
-			for (j = 1; j <= i; j++)
+			for (j = 2; j <= i; j++)
 				_putchar(' ');
 
 			_putchar('\\');
