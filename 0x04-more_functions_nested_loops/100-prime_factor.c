@@ -24,7 +24,7 @@ int main(void)
 		divisor++;
 	}
 
-	printf("%lU\n", largest_prime);
+	printf("%lu\n", largest_prime);
 
 	return (0);
 }
