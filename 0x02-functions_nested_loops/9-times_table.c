@@ -20,10 +20,10 @@ void times_table(void)
 			printf("%2d", ans);
 
 			if (j >= 0 && j<= 8)
-			{
 				putchar(',');
+
+			if (j >= 1 && j<= 8)
 				putchar(' ');
-			}
 
 		}
 		putchar('\n');
