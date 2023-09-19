@@ -19,7 +19,7 @@ void print_rev(char *s)
 	/* To print from last character to initial character */
 	for (i = len; i >= 0; i--)
 	{
-		if (*s == ' ' && i == len)
+		if (*s == ' ' && i >= len - 1)
 		{
 			putchar('\b');
 		}
