@@ -15,10 +15,11 @@ void print_rev(char *s)
 		len++;
 		s++;
 	}
-
+	/* Move the pointer back to the last non-space character */
+	s--;
 
 	/* To print from last character to initial character */
-	for (i = len; i >= 0; i--)
+	for (i = len - 1; i >= 0; i--)
 	{
 		if (*s != ' ')
 			putchar(*s);
