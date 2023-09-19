@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "main.h"
-/*
- * print_rev_no_spaces - Print string in reverse order without spaces
+/**
+ * print_rev - Print string in reverse order without spaces
+ * @s: Pointer pointing to the string
  */
 void print_rev(char *s)
 {
@@ -19,11 +20,7 @@ void print_rev(char *s)
 	/* To print from last character to initial character */
 	for (i = len; i >= 0; i--)
 	{
-		if (*s == ' ' && i >= len - 1)
-		{
-			putchar('\b');
-		}
-		else
+		if (*s != ' ')
 			putchar(*s);
 		s--; /* Move the pointer to the previous character */
 	}
