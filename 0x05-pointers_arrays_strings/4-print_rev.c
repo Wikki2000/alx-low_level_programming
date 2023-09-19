@@ -1,9 +1,7 @@
-#include "main.h"
 #include <stdio.h>
 
-/**
+/*
  * print_rev - Print string in reverse order
- * @s: Pointer pointing to the string
  */
 void print_rev(char *s)
 {
@@ -11,12 +9,20 @@ void print_rev(char *s)
 	int i;
 
 	/* To get the final character of a string */
-	while (s[len] != '\0')
+	while (*s != '\0')
+	{
 		len++;
+		s++;
+	}
 
 	/* To print from last charactacter to initial character */
-	for (i = len; i >= 0; i--)
-		_putchar(s[i]);
-
-	_putchar('\n');
+	for (i = len ; i >= 0; i--)
+	{
+		if (i >= len && *s == ' ')
+			putchar('\b');
+		else
+			putchar(*s);
+		s--; /* Move the pointer to the previous character */
+	}
+	putchar('\n');
 }
