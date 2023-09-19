@@ -22,6 +22,7 @@ void rev_string(char *s)
 	{
 		/* Swap characters using a temporary variable */
 		char temp = s[start];
+
 		s[start] = s[end];
 		s[end] = temp;
 
