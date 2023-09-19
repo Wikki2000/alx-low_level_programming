@@ -11,18 +11,12 @@ void print_rev(char *s)
 	int i;
 
 	/* To get the final character of a string */
-	while (*s != '\0')
-	{
+	while (s[len] != '\0')
 		len++;
-		s++;
-	}
 
 	/* To print from last charactacter to initial character */
 	for (i = len; i >= 0; i--)
-	{
-		putchar(*s);
-		s--; /* Move the pointer to the previous character */
-	}
-	putchar('\n');
+		_putchar(s[i]);
 
+	_putchar('\n');
 }
