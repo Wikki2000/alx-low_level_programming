@@ -16,11 +16,11 @@ int main(void)
 {
 
 	int i;
+	const char charset[] = "abcdefghijklmnopqrstuvwxz0123456789";
 
 	/* Seed the random number generator with the current time */
 	srand(time(NULL));
 
-	const char charset[] = "abcdefghijklmnopqrstuvwxz0123456789";
 
 	/* Generate and print a random password */
 	printf("Random Password: ");
