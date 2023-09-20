@@ -13,14 +13,15 @@ void print_array(int *a, int n)
 
 	if (n <= 0)
 		printf("Error");
-	for (i = 0; i < n; i++)
+	else 
 	{
-		if (i != 0)
-			putchar(',');
-		printf("%d", *a);
-		if (i != n)
-			putchar(' ');
-		a++;
+		for (i = 0; i < n; i++)
+		{
+			if (i != 0)
+				printf(", ");
+			printf("%d", *a);
+			a++;
+		}
 	}
 	putchar('\n');
 }
