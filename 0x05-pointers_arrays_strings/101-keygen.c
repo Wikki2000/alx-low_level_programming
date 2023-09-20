@@ -20,8 +20,8 @@ int main(void)
 	/* Seed the random number generator with the current time */
 	srand(time(NULL));
 
-	/* Define the character set for the password */
 	const char charset[] = "abcdefghijklmnopqrstuvwxz0123456789";
+
 	/* Generate and print a random password */
 	printf("Random Password: ");
 	for (i = 0; i < PASSWORD_LENGTH; i++)
