@@ -18,6 +18,8 @@ void print_array(int *a, int n)
 		if (i != 0)
 			putchar(',');
 		printf("%d", *a);
+		if (i != n)
+			putchar(' ');
 		a++;
 	}
 	putchar('\n');
