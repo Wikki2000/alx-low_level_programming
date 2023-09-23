@@ -1,25 +1,40 @@
 #include "main.h"
+#include <limits.h>
 
 /**
- * _strcpy - Copy a string from src to dest
- * @dest: Pointer to the destination buffer
- * @src: Pointer to the source string
+ * _atoi - Converts a string to an integer.
+ * @s: The input string.
  *
- * Return: Pointer to the destination buffer (dest)
+ * Return: The converted integer value.
  */
-char *_strcpy(char *dest, char *src)
-{
-	char *original_dest = dest;
+int _atoi(char *s) {
+	int sign = 1; /* Initialize sign to positive */
+	int result = 0; /* Initialize the result */
 
-	while (*src != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
+	/* Handle leading whitespace */
+	while (*s == ' ') {
+		s++;
 	}
 
-	*dest = '\0';
+	/* Check for a sign (+ or -) */
+	if (*s == '-')
+	{
+		sign = -1; /* Set sign to negative */
+		s++;
+	}
+	else if (*s == '+')
+		s++; /* Skip the plus sign */
 
-	return original_dest;
+	/* Iterate through the string and convert digits to an integer */
+	while (*s >= '0' && *s <= '9')
+	{
+		/* Check for potential integer overflow */
+		if (result > (INT_MAX - (*s - '0')) / 10)
+			return (sign == 1) ? INT_MAX : INT_MIN;
+		result = result * 10 + (*s - '0'); /* Convert digit to integer */
+		s++;
+	}
+
+	/* Apply the sign to the result */
+	return (result * sign);
 }
-
