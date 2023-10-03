@@ -3,8 +3,8 @@
 /**
  * main - print the number of argument pass though main function
  *
- * @argc - numbers of arguments
- * @argv - arrays 0of argument
+ * @argc: numbers of arguments
+ * @argv: arrays of argument
  *
  * Return: Always (0)
  */
