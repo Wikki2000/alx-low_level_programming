@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*A program to generate random numbers*/
+/**
+ * main - Checked if number is is > or < or = to 0
+ *
+ * Return: Always (0)
+ */
 int main(void)
 {
 	int n;
