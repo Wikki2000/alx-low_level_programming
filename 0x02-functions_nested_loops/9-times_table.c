@@ -3,6 +3,8 @@
 
 /**
  * times_table - Print 9 times table
+ *
+ * Return: Void
  */
 void times_table(void)
 {
@@ -19,10 +21,10 @@ void times_table(void)
 
 			printf("%2d", ans);
 
-			if (j >= 0 && j<= 8)
+			if (j >= 0 && j <= 8)
 				putchar(',');
 
-			if (j >= 1 && j<= 8)
+			if (j >= 1 && j <= 8)
 				putchar(' ');
 
 		}

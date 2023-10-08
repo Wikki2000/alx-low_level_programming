@@ -18,9 +18,9 @@ void print_times_table(int n)
 			{
 				ans = i * j;
 
-				printf("%3d", ans);
+				printf("%3d ", ans);
 
-				if (j >= 0 && j < n)
+				if (j >= 0 && j <  n)
 				{
 					putchar(',');
 					putchar(' ');
