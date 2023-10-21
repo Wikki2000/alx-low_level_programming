@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 
 /**
  * list_len - Count the number of element in link list
@@ -13,7 +13,7 @@ size_t list_len(const list_t *h)
 	while (h)
 	{
 		count++;
-		h->next;
+		h = h->next;
 	}
 
 	return (count);
