@@ -2,7 +2,7 @@
 /**
  * print_listint - Print element in a link list
  * @h: Head pointer to the link list
- * 
+ *
  * Description: This function print all element of a link list
  *
  * Return: The number of node
