@@ -35,10 +35,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	ptr = (*head);
 
-	/* Traverse the list until you reach one step lower than the desired index (idx) */
+	/*
+	 * Traverse the list until you reach
+	 * one step lower than the desired index (id)
+	 */
 	for (i = 0; ptr && i < idx - 1; i++)
 		ptr = ptr->next;
-	
+
 	/* Update the new node to connect the address of the node in front */
 	new->next = ptr->next;
 
