@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * print_listint - Print element in a link list
+ * listint_len - Calculate the lenght of a link list
  * @h: Head pointer to the link list
  *
  * Description: This function print all element of a link list

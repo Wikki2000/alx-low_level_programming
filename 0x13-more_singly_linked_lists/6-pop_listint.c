@@ -11,6 +11,9 @@ int pop_listint(listint_t **head)
 	listint_t *temp;
 	int data;
 
+	if (*head == NULL)
+		return (-1);
+
 	data = (*head)->n; /* Store data from the head node */
 	temp = *head; /* Create temp ptr to the head node */
 	(*head) = (*head)->next; /* Update head ptr to point to next node */
