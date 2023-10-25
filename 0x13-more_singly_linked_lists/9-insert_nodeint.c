@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_listint - Print element in a link list
+ * listint_len - Print element in a link list
  * @h: Head pointer to the link list
  *
  * Description: This function print all element of a link list
@@ -10,16 +10,15 @@
  */
 size_t listint_len(const listint_t *h)
 {
-        size_t count = 0;
-        const listint_t *ptr;
+	size_t count = 0;
+	const listint_t *ptr;
 
-        ptr = h;
-        if (ptr == NULL)
-                return (0);
+	ptr = h;
+	if (ptr == NULL)
+		return (0);
 
-        count = 1 + listint_len(ptr->next);
-
-        return (count);
+	count = 1 + listint_len(ptr->next);
+	return (count);
 }
 
 /**
@@ -57,12 +56,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		(*head) = new;
 		return (new);
 	}
-
 	else if (idx > len_list)
 		return (NULL);
-
 	ptr = (*head);
-
 	/*
 	 * Traverse the list until you reach
 	 * one step lower than the desired index (id)
@@ -72,8 +68,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/* Update the new node to connect the address of the node in front */
 	new->next = ptr->next;
-
 	ptr->next = new; /* Insert new node */
-
 	return (new);
 }
