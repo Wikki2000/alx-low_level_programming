@@ -1,32 +1,58 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - Prints the contents of a hash table
- * @ht: The hash table to print
+ * hash_table_print - function that prints a hash table
+ * @ht: pointer to a hash table
+ * Return: Nothing
  */
+
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t *current_node;
-	unsigned long int i;
-	int first = 1;
+	unsigned long int index, count;
+	hash_node_t *head;
 
 	if (ht == NULL)
 		return;
-
+	count = hash_node_count(ht);
 	printf("{");
-	for (i = 0; i < ht->size; i++)
+	for (index = 0; index < ht->size; index++)
 	{
-		current_node = ht->array[i];
-		while (current_node != NULL)
+		head = ht->array[index];
+		while (head)
 		{
-			if (first)
-				first = 0;
-			else
+			printf("'%s': '%s'", head->key, head->value);
+			if (count > 1)
+			{
 				printf(", ");
-
-			printf("'%s': '%s'", current_node->key, current_node->value);
-			current_node = current_node->next;
+				count--;
+			}
+			head = head->next;
 		}
 	}
 	printf("}\n");
+}
+
+
+
+/**
+ * hash_node_count - count a hash node inside a hash table
+ * @ht: pointer to the hash table
+ * Return: number of the items inside the hash table
+ */
+
+unsigned long int hash_node_count(const hash_table_t *ht)
+{
+	unsigned long int i, count = 0;
+	hash_node_t *head;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		head = ht->array[i];
+		while (head)
+		{
+			count++;
+			head = head->next;
+		}
+	}
+	return (count);
 }
