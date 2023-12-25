@@ -1,72 +1,59 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to the hash table
- * @ht: pointer to the hash table
- * @key: key
- * @value: value
- * Return: 1 - success, 0 - failure
+ * hash_table_set - Adds or updates an element in the hash table
+ * @ht: The hash table to add/update the key/value pair
+ * @key: The key for the element
+ * @value: The value associated with the key
+ *
+ * Return: 1 if successful, 0 otherwise
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	const char *new_value;
+	hash_node_t *new_node, *current_node;
 	unsigned long int index;
-	hash_node_t *node, *head, *tmp;
 
-	if (ht == NULL || !key)
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 		return (0);
-	new_value = value == NULL ? "" : value;
-	node = create_hash_node(key, new_value);
-	if (node == NULL)
-		return (0);
-	/* create an array index using the hash_djb2 algorithm */
-	index = key_index((const unsigned char *)key, ht->size);
-	/* check if the node already exit in the table */
-	head = ht->array[index];
-	if (head == NULL)
+
+	/* Get the index where the key/value pair should be stored */
+	index = key_index((unsigned char *)key, ht->size);
+
+	/* Check if the key already exists in the linked list at the index */
+	current_node = ht->array[index];
+	while (current_node != NULL)
 	{
-		ht->array[index] = node;
-		return (1);
-	}
-	tmp = head;
-	while (tmp)
-	{
-		if (strcmp(tmp->key, key) == 0)
+		/* If the key already exists, update the value and return */
+		if (strcmp(current_node->key, key) == 0)
 		{
-			strcpy(tmp->value, value);
+			free(current_node->value);
+			current_node->value = strdup(value);
 			return (1);
 		}
-		tmp = tmp->next;
+		current_node = current_node->next;
 	}
-	node->next = head;
-	ht->array[index] = node;
+
+	/* Create a new node and duplicate the key and value */
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+	new_node->key = strdup(key);
+	if (new_node->key == NULL)
+	{
+		free(new_node);
+		return (0);
+	}
+	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (0);
+	}
+
+	/* Add the new node at the beginning of the linked list */
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
+
 	return (1);
-}
-
-/**
- * create_hash_node - create a hash node
- * @key: key of the node
- * @value: value of the node
- * Return: key/value pair structued memory
- */
-
-hash_node_t *create_hash_node(const char *key, const char *value)
-{
-	hash_node_t *node;
-	char *tmp1, *tmp2;
-
-	node = (hash_node_t *)malloc(sizeof(hash_node_t));
-	if (node == NULL)
-		return (NULL);
-	tmp1 = malloc(sizeof(char) * (strlen(key) + 1));
-	strcpy(tmp1, key);
-	tmp1[strlen(key)] = '\0';
-	node->key = tmp1;
-	tmp2 = malloc(sizeof(char) * (strlen(value) + 1));
-	strcpy(tmp2, value);
-	tmp2[strlen(value)] = '\0';
-	node->value = tmp2;
-	node->next = NULL;
-	return (node);
 }
