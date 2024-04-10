@@ -1,6 +1,9 @@
 
 # Compiler
-CC = -Wall -Werror -Wextra -pedantic
+CC  = gcc
+
+# compilation flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # Source files
 SRC = main.c school.c
@@ -19,9 +22,8 @@ RM = rm -f
 
 # Executable Compilation Rule
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-
-# Rule to clean Emacs and Vim temporary files along with the executable
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	# Rule to clean Emacs and Vim temporary files along with the executable
 clean:
 	$(RM) *~ $(NAME)
 
