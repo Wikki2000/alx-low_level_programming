@@ -1,42 +1,44 @@
-# Check if m.h exists
-ifeq ($(wildcard m.h),)
-$(error Header file m.h does not exist)
-endif
+# compiler
+CC = gcc
 
-# Compiler
-CC  = gcc
+# source files
+SRC = main.c school.c
+
+# object files extracted from the specfied source files
+OBJ = $(SRC:.c=.o)
+
+# name of the excutable
+NAME = school
+
+# most macros are already define by default by make like, RM, generating object files and CFLAG. and others
+# program to delete files
+# RM = rm -f
 
 # compilation flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
+# rules for all target
+all: $(NAME)
 
-# Source files
-SRC = main.c school.c
+ifeq ($(wildcard m.h), m.h)
 
-# Object files (automatically generated)
-OBJ = $(SRC:.c=.o)
-
-# Name of the executable
-NAME = school
-
-# Rule to build the executable
-all: $(NAME) #Default rule
-
-# Delete files
-RM = rm -f
-
-# Executable Compilation Rule
+# rules for generating executable by linking all object files
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	# Rule to clean Emacs and Vim temporary files along with the executable
+	$(CC) $^ -o $@
+
+# rules for cleaning - clean
 clean:
 	$(RM) *~ $(NAME)
 
-# Rule to clean object files
+# rules for removing object files
 oclean:
 	$(RM) $(OBJ)
 
-# Rules for clean and oclean
+# rules for deleting emacs temp. vim temp. and object and executables
 fclean: clean oclean
 
-# rules for fcleaning and recompiling
-re: fclean all
+# rules for recompiling
+re: oclean all
+
+else
+$(error m.h does not exist)
+endif
