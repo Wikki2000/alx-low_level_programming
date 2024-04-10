@@ -1,6 +1,6 @@
 # Set variables
 CC = gcc
-SRC = *.c
+SRC = main.c school.c
 
 # Set rule for target
 all: school
