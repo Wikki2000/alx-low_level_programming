@@ -1,0 +1,6 @@
+#Using all target rule
+all: school
+
+#Defining school dependencies
+school: main.c school.c
+	gcc main.c school.c -o school
