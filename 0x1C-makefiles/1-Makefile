@@ -1,0 +1,10 @@
+# Set variables
+CC = gcc
+SRC = *.c
+
+# Set rule for target
+all: school
+
+# Rule to build the 'school' target
+school: $(SRC)
+	$(CC) $(SRC) -o school
