@@ -11,7 +11,7 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 
 # Rule to build the executable
-all: $(NAME)
+all: $(NAME) #Default rule
 
 # Delete files
 RM = rm -f
@@ -28,8 +28,8 @@ clean:
 oclean:
 	$(RM) $(OBJ)
 
-# rules for deleting emacs temp. vim temp. and object and executables
+# Rules for clean and oclean
 fclean: clean oclean
 
-# rules for recompiling
-re: oclean all
+# rules for fcleaning and recompiling
+re: fclean all
