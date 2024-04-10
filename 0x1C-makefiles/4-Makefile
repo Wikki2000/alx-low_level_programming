@@ -23,7 +23,8 @@ RM = rm -f
 # Executable Compilation Rule
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	# Rule to clean Emacs and Vim temporary files along with the executable
+
+# Rule to clean Emacs and Vim temporary files along with the executable
 clean:
 	$(RM) *~ $(NAME)
 
